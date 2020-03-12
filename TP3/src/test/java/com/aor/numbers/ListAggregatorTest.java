@@ -2,14 +2,19 @@ package com.aor.numbers;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
+import static org.mockito.ArgumentMatchers.anyObject;
+import static org.mockito.Mockito.when;
 
 public class ListAggregatorTest {
     private List<Integer> list;
+    private IListDeduplicator mockDeduplicator;
+    private IListDeduplicator mockDeduplicator1;
 
     @Before
     public void setup() {
@@ -19,6 +24,23 @@ public class ListAggregatorTest {
         list.add(4);
         list.add(2);
         list.add(5);
+
+        List<Integer> l = new ArrayList<>();
+        l.add(1);
+        l.add(2);
+        l.add(4);
+        l.add(5);
+
+        mockDeduplicator = Mockito.mock(IListDeduplicator.class);
+        when(mockDeduplicator.deduplicate(anyObject())).thenReturn(l);
+
+        List<Integer> l1 = new ArrayList<>();
+        l1.add(1);
+        l1.add(2);
+        l1.add(4);
+
+        mockDeduplicator1 = Mockito.mock(IListDeduplicator.class);
+        when(mockDeduplicator1.deduplicate(anyObject())).thenReturn(l1);
     }
 
     @Test
@@ -65,18 +87,7 @@ public class ListAggregatorTest {
     public void distinct() {
         ListAggregator aggregator = new ListAggregator(list);
 
-        class Stub implements IListDeduplicator {
-            public List<Integer> deduplicate(IListSorter s) {
-                List<Integer> l = new ArrayList<>();
-                l.add(1);
-                l.add(2);
-                l.add(4);
-                l.add(5);
-                return l;
-            }
-        }
-
-        int distinct = aggregator.distinct(new Stub());
+        int distinct = aggregator.distinct(mockDeduplicator);
 
         assertEquals(4, distinct);
     }
@@ -92,17 +103,7 @@ public class ListAggregatorTest {
 
         ListAggregator aggregator = new ListAggregator(list);
 
-        class Stub implements IListDeduplicator {
-            public List<Integer> deduplicate(IListSorter s) {
-                List<Integer> l = new ArrayList<>();
-                l.add(1);
-                l.add(2);
-                l.add(4);
-                return l;
-            }
-        }
-
-        int distinct = aggregator.distinct(new Stub());
+        int distinct = aggregator.distinct(mockDeduplicator1);
 
         assertEquals(3, distinct);
     }
