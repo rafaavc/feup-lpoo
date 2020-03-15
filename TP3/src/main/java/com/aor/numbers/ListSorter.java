@@ -23,9 +23,7 @@ public class ListSorter implements IListSorter {
      * @return A sorted version of the list.
      */
     public List<Integer> sort() {
-        List<Integer> sorted = new ArrayList();
-        for (Integer number : list)
-            sorted.add(number);
+        List<Integer> sorted = new ArrayList<>(list);
 
         for (int i = 0; i < sorted.size(); i++)
             for (int j = i + 1; j < sorted.size(); j++)
