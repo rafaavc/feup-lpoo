@@ -11,6 +11,7 @@ public class Application {
         myAggregator.addShape(new Ellipse(2.1, 0.5));
         myAggregator.addShape(new Rectangle(2, 1));
         myAggregator.addShape(new Triangle(2, 1));
+        myAggregator.addShape(new House(1));
 
 
 

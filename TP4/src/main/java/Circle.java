@@ -1,4 +1,4 @@
-public class Circle extends Shape {
+public class Circle implements AreaShape {
     private double radius;
     Circle(double radius) {
         this.radius = radius;
@@ -8,7 +8,7 @@ public class Circle extends Shape {
         return Math.PI * Math.pow(radius, 2);
     }
 
-    public double getRadius() {
-        return radius;
+    public void draw() {
+        System.out.println("Circle");
     }
 }

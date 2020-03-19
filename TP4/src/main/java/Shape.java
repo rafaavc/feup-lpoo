@@ -1,3 +1,2 @@
-interface Shape extends BasicShape {
-    double getArea();
+interface Shape extends Drawable {
 }

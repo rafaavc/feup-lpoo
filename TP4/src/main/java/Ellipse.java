@@ -1,4 +1,4 @@
-public class Ellipse implements Shape {
+public class Ellipse implements AreaShape {
     private double xRadius, yRadius;
     Ellipse(double x, double y) {
         xRadius = x;
@@ -9,11 +9,7 @@ public class Ellipse implements Shape {
         return Math.PI * xRadius * yRadius;
     }
 
-    public double getxRadius() {
-        return xRadius;
-    }
-
-    public double getyRadius() {
-        return yRadius;
+    public void draw() {
+        System.out.println("Ellipse");
     }
 }

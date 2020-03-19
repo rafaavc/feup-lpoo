@@ -1,14 +1,14 @@
-public class Square extends Shape {
+public class Square implements AreaShape {
     private double side;
     Square(double side) {
         this.side = side;
     }
 
     public double getArea() {
-        return side*side;
+        return Math.pow(side, 2);
     }
 
-    public double getSide() {
-        return side;
+    public void draw() {
+        System.out.println("Square");
     }
 }
