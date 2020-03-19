@@ -1,4 +1,5 @@
-import java.awt.geom.Area;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
@@ -17,5 +18,17 @@ public class Application {
 
         System.out.println(stringOutputter.output());
         System.out.println(XMLOutputter.output());
+
+        List<House> houses = new ArrayList<>();
+        houses.add(new House(10));
+        houses.add(new House(50));
+        houses.add(new House(60));
+        City myCity = new City(houses);
+
+        AreaStringOutputter stringOutputter1 = new AreaStringOutputter(myCity);
+        AreaXMLOutputter XMLOutputter1 = new AreaXMLOutputter(myCity);
+
+        System.out.println(stringOutputter1.output());
+        System.out.println(XMLOutputter1.output());
     }
 }

@@ -1,6 +1,6 @@
 public class AreaXMLOutputter {
-    AreaAggregator aggregator;
-    AreaXMLOutputter(AreaAggregator aggr) {
+    SumProvider aggregator;
+    AreaXMLOutputter(SumProvider aggr) {
         aggregator = aggr;
     }
 
