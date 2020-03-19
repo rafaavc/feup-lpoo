@@ -1,5 +1,5 @@
 public class Circle extends Shape {
-    double radius;
+    private double radius;
     Circle(double radius) {
         this.radius = radius;
     }
