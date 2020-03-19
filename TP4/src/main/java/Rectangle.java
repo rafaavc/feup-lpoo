@@ -1,4 +1,4 @@
-public class Rectangle extends Shape {
+public class Rectangle implements Shape {
     double height, width;
     Rectangle(double h, double w) {
         height = h;
