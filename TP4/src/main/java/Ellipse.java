@@ -5,6 +5,10 @@ public class Ellipse extends Shape {
         yRadius = y;
     }
 
+    public double getArea() {
+        return Math.PI * xRadius * yRadius;
+    }
+
     public double getxRadius() {
         return xRadius;
     }
