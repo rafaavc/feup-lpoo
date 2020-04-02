@@ -10,8 +10,8 @@ public class Order {
         lines = new ArrayList<>();
     }
 
-    public void add(Product product, int quantity) {
-        lines.add(new OrderLine(product, quantity));
+    public void add(String name, double price, int quantity) {
+        lines.add(new OrderLine(name, price, quantity));
     }
 
     public double getTotal() {

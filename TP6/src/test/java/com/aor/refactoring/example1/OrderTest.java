@@ -8,15 +8,15 @@ public class OrderTest {
 
     private Order getSmallOrder() {
         Order order = new Order();
-        order.add(new Product("Lollipop", 5), 10);
+        order.add("Lollipop", 5, 10);
 
         return order;
     }
 
     private Order getLargeOrder() {
         Order order = new Order();
-        order.add(new Product("Playstation 4", 400), 2);
-        order.add(new Product("Red Dead Redemption 2", 50), 1);
+        order.add("Playstation 4", 400, 2);
+        order.add("Red Dead Redemption 2", 50, 1);
 
         return order;
     }

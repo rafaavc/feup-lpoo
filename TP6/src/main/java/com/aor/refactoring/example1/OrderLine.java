@@ -2,42 +2,21 @@ package com.aor.refactoring.example1;
 
 
 public class OrderLine {
-    /*public Product product;   THIS WOULD BE A DATA CLASS
-    public int quantity;*/
-
-    private Product product;
+    private String name;
+    private double price;
     private int quantity;
 
-    public OrderLine(Product product, int quantity) {
-        this.product = product;
-        this.quantity = quantity;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public void setQuantity(int quantity) {
+    public OrderLine(String name, double price, int quantity) {
+        this.name = name;
+        this.price = price;
         this.quantity = quantity;
     }
 
     public String getLine() {
-        return getProduct().getName() + "(x" + getQuantity() + "): " + (getTotalPrice()) + "\n";
+        return name + "(x" + quantity + "): " + getTotalPrice() + "\n";
     }
 
-    /*
-    * This operation was being repeated many times outside,
-    * this makes it more consistent
-    * */
     public double getTotalPrice() {
-        return product.getPrice()*quantity;
+        return price*quantity;
     }
 }
