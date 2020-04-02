@@ -1,13 +1,34 @@
 package com.aor.refactoring.example4;
 
-public class Client extends Worker {
+import java.util.Objects;
 
-    public Client(String name, String phone) {
-        super(name, phone, null, null);
+public class Client {
+    private final String name, phone;
+
+    Client(String name, String phone) {
+        this.name = name;
+        this.phone = phone;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPhone() {
+        return phone;
     }
 
     @Override
-    public boolean login(String username, String password) {
-        return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Client client = (Client) o;
+        return name.equals(client.name) &&
+                phone.equals(client.phone);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, phone);
     }
 }
