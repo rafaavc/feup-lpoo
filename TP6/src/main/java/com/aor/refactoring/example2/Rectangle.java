@@ -1,10 +1,7 @@
 package com.aor.refactoring.example2;
 
 public class Rectangle implements Shape {
-    private double x;
-    private double y;
-    private double width;  // ONLY FOR RECTANGLES
-    private double height; // ONLY FOR RECTANGLES
+    private double x, y, width, height;
 
     public Rectangle(double x, double y, double width, double height) {
         this.x = x;
