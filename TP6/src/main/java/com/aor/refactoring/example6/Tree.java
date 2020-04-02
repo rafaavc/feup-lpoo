@@ -7,9 +7,7 @@ import java.util.List;
 
 public class Tree {
     public Date plantedAt;
-    public String locationLatitude;
-    public String locationLongitude;
-    public String locationName;
+    public String locationLatitude, locationLongitude, locationName;
     private List<Date> appraisalDates;
 
     public Tree(Date plantedAt, String locationLatitude, String locationLongitude, String locationName){
@@ -37,13 +35,12 @@ public class Tree {
     }
 
     public boolean isNextAppraisalOverdue(){
-        Date today = new Date();
-        Date latestAppraisalDate = today;
-
-        if (this.appraisalDates.size() > 0) {
+        Date latestAppraisalDate;
+        if (this.appraisalDates.size() != 0) {
             latestAppraisalDate = this.appraisalDates.get(0);
-        }
-        for(Date appraisalDate : this.appraisalDates) {
+        } else return false;
+
+        for (Date appraisalDate : this.appraisalDates) {
             if (latestAppraisalDate.before(appraisalDate)) {
                 latestAppraisalDate = appraisalDate;
             }
@@ -61,6 +58,6 @@ public class Tree {
 
         Date nextAppraisalDate = calendar.getTime();
         // Appraisal is only overdue if its date is in the past
-        return nextAppraisalDate.before(today);
+        return nextAppraisalDate.before(latestAppraisalDate);
     }
 }
