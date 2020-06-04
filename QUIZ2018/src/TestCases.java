@@ -29,7 +29,7 @@ public class TestCases {
         assertTrue(Modifier.isAbstract(c.getModifiers()));
     }
 
-/*
+
   @Test
   public void testEvent() {
     Event e = new Event("ENEI");
@@ -46,9 +46,9 @@ public class TestCases {
     assertEquals("Encontro Nacional de Estudantes de Informatica", e.getDescription());
     fieldsArentPublic(Event.class);
   }
-*/
 
-/*
+
+
   @Test
   public void testEventCopyConstructor() {
     Event e = new Event("A", "B", "C");
@@ -59,9 +59,8 @@ public class TestCases {
     assertNotSame(e, e1);
   }
 
-*/
 
-/*
+
   @Test
   public void testEventAccessors() {
     Event e = new Event("TalkABit", "January 20th, 2017", "non-profit tech conference");
@@ -73,9 +72,9 @@ public class TestCases {
     assertEquals("We take your money tech conference", e.getDescription());
   }
 
-*/
 
-/*
+
+
   @Test
   public void testEventPrintOut() {
     Event e = new Event("WebSummit", "Next year again", "world-wide tech event");
@@ -84,9 +83,9 @@ public class TestCases {
     assertEquals("TalkABit is a non-profit tech conference and will be held at January 20th, 2017.", "" + e);
   }
 
-*/
 
-/*
+
+
   @Test
   public void testSameEvent() {
     Event e = new Event("WebSummit", "Next year again", "world-wide tech event");
@@ -113,9 +112,9 @@ public class TestCases {
     assertFalse(e.equals((Object) e3));
   }
 
-*/
 
-/*
+
+
   @Test
   public void testParticipants() {
     Person p = new Attendee("John");
@@ -144,9 +143,9 @@ public class TestCases {
       isAbstract(Person.class);
     }
   }
-*/
 
-/*
+
+
   @Test
   public void testAudience() {
     Event e = new Event("E1", "Whenever", "Whatever");
@@ -166,12 +165,12 @@ public class TestCases {
     assertEquals(5, e.getAudienceCount());
   }
 
-*/
 
-/*
+
+
   @Test
   public void testNoDuplicatePerson() {
-    TreeSet<Person> people = new TreeSet<Person>();
+    TreeSet<Person> people = new TreeSet<>();
     Person p = new Speaker("John");
     people.add(p);
     assertEquals(1, people.size());
@@ -180,9 +179,9 @@ public class TestCases {
     assertEquals(1, people.size());
   }
 
-*/
 
-/*
+
+
   @Test
   public void testParty() {
     Party p = new Party("FEUP Caffe", "Tonight!", "Party on!");
@@ -207,9 +206,9 @@ public class TestCases {
     assertEquals(3, e.getAudienceCount());
   }
 
-*/
 
-/*
+
+
   @Test
   public void testUsernames() {
     ArrayList<User> users = new ArrayList<User>();
@@ -222,14 +221,14 @@ public class TestCases {
     users.add(new Artist("Beck", 20));
 
     Iterator<User> i = users.iterator();
-    String s = "";
+    StringBuilder s = new StringBuilder();
     while (i.hasNext()) {
         User user = i.next();
-        s += "," + user.getUsername();
+        s.append(",").append(user.getUsername());
     }
 
-    assertEquals(",John43,Bill Gates12,Beck20", s);
+    assertEquals(",John43,Bill Gates12,Beck20", s.toString());
   }
-*/
+
 
 }
