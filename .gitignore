@@ -3,6 +3,5 @@
 out/
 build/
 *.iml
-project
-tests
+slides
 

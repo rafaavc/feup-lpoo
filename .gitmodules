@@ -1,0 +1,3 @@
+[submodule "lpoo-proj"]
+	path = lpoo-proj
+	url = git@github.com:rafaavc/lpoo-proj.git
