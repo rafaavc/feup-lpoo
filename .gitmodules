@@ -1,3 +1,3 @@
-[submodule "lpoo-proj"]
-	path = lpoo-proj
-	url = git@github.com:rafaavc/lpoo-proj.git
+[submodule "lpoo-project"]
+	path = lpoo-project
+	url = git@github.com:rafaavc/lpoo-project.git
